@@ -258,8 +258,8 @@ html { scroll-behavior: smooth; }
       overflow: visible;
     }
 #bbtk-page .floating-proof {
-      left: -18px;
-      top: 58px;
+      left: -30px;
+      top: -30px;
       width: min(230px, 38vw);
       padding: 0;
       transform: rotate(-5deg);
@@ -418,7 +418,7 @@ html { scroll-behavior: smooth; }
     }
 #bbtk-page .credential-list span {
       display: grid;
-      grid-template-columns: 44px 1fr;
+      grid-template-columns: 44px minmax(0, 1fr);
       gap: 12px;
       align-items: center;
       padding: 13px;
@@ -487,7 +487,7 @@ html { scroll-behavior: smooth; }
 #bbtk-page .pain-stack { display: grid; gap: 22px; }
 #bbtk-page .pain-card {
       display: grid;
-      grid-template-columns: 94px 1fr;
+      grid-template-columns: 94px minmax(0, 1fr);
       gap: 24px;
       padding: 30px;
       border-radius: 28px;
@@ -555,7 +555,7 @@ html { scroll-behavior: smooth; }
 #bbtk-page .compare-col ul { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
 #bbtk-page .compare-col li {
       display: grid;
-      grid-template-columns: 42px 1fr;
+      grid-template-columns: 42px minmax(0, 1fr);
       gap: 12px;
       align-items: center;
       padding: 15px;
@@ -636,7 +636,7 @@ html { scroll-behavior: smooth; }
 #bbtk-page .mini-proof { display: grid; gap: 12px; margin-top: 28px; }
 #bbtk-page .mini-proof span {
       display: grid;
-      grid-template-columns: 46px 1fr;
+      grid-template-columns: 46px minmax(0, 1fr);
       gap: 12px;
       align-items: center;
       padding: 14px;
@@ -644,6 +644,8 @@ html { scroll-behavior: smooth; }
       background: rgba(255, 255, 255, .1);
       color: white;
       font-weight: 900;
+      overflow-wrap: break-word;
+      word-break: break-word;
     }
 #bbtk-page .mini-proof .mi {
       display: grid;
@@ -670,7 +672,7 @@ html { scroll-behavior: smooth; }
       transition: transform .18s ease, box-shadow .18s ease;
     }
 #bbtk-page .feature-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
-#bbtk-page .feature-card.feature-xl { grid-column: span 6; display: grid; grid-template-columns: 120px 1fr; gap: 24px; align-items: center; background: linear-gradient(135deg, rgba(5, 154, 165, .12), white); }
+#bbtk-page .feature-card.feature-xl { grid-column: span 6; display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 24px; align-items: center; background: linear-gradient(135deg, rgba(5, 154, 165, .12), white); }
 #bbtk-page .feature-card.feature-wide { grid-column: span 6; background: var(--cream); }
 #bbtk-page .feature-card:nth-child(5) { grid-column: span 3; background: #fff0f7; }
 #bbtk-page .feature-card:nth-child(7) { grid-column: span 3; background: #f2fbff; }
@@ -764,6 +766,10 @@ html { scroll-behavior: smooth; }
       font-family: "Baloo 2";
       font-size: clamp(24px, 4vw, 30px);
       line-height: 1.15;
+      min-width: 0;
+      flex: 1 1 auto;
+      overflow-wrap: break-word;
+      word-break: break-word;
     }
 #bbtk-page .resource-card > .resource-card-image {
       display: flex;
@@ -801,6 +807,14 @@ html { scroll-behavior: smooth; }
       grid-column: span 6;
       display: flex;
       flex-direction: column;
+    }
+#bbtk-page .resource-card.feature-resource-large .resource-card-image {
+      min-height: 360px;
+    }
+#bbtk-page .resource-card.feature-resource-large .resource-card-image img {
+      height: 360px;
+      width: 100%;
+      object-fit: contain;
     }
 #bbtk-page .step-card strong {
       display: flex;
@@ -879,7 +893,7 @@ html { scroll-behavior: smooth; }
     }
 #bbtk-page .audience span {
       display: grid;
-      grid-template-columns: 52px 1fr;
+      grid-template-columns: 52px minmax(0, 1fr);
       gap: 12px;
       align-items: center;
       padding: 18px;
@@ -959,7 +973,7 @@ html { scroll-behavior: smooth; }
     }
 #bbtk-page .risk-card {
       display: grid;
-      grid-template-columns: 82px 1fr;
+      grid-template-columns: 82px minmax(0, 1fr);
       gap: 20px;
       align-items: start;
       padding: 26px;
@@ -1069,7 +1083,7 @@ html { scroll-behavior: smooth; }
       max-width: 1180px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 140px 1fr;
+      grid-template-columns: 140px minmax(0, 1fr);
       gap: 28px;
       align-items: center;
       padding: clamp(30px, 5vw, 52px);
@@ -1146,7 +1160,7 @@ html { scroll-behavior: smooth; }
 #bbtk-page .hero-inner, #bbtk-page .problem-layout, #bbtk-page .creator-layout, #bbtk-page .feature-showcase, #bbtk-page .fit-grid, #bbtk-page .value-layout { grid-template-columns: 1fr; }
 #bbtk-page .product-stage { min-height: auto; padding-bottom: 58px; }
 #bbtk-page .product-frame { margin: 22px auto 0; width: min(920px, 100%); }
-#bbtk-page .floating-proof { left: 0; top: 0; }
+#bbtk-page .floating-proof { left: -10px; top: -24px; bottom: auto; }
 #bbtk-page .authority-band, #bbtk-page .steps, #bbtk-page .bonus-grid { grid-template-columns: 1fr 1fr; }
 #bbtk-page .cost-layout { grid-template-columns: 1fr; }
 #bbtk-page .compare-grid { grid-template-columns: 1fr; }
@@ -1164,10 +1178,13 @@ html { scroll-behavior: smooth; }
 #bbtk-page .product-frame { border-radius: 28px; padding: 10px; transform: none; }
 #bbtk-page .product-frame img { border-radius: 22px; }
 #bbtk-page .floating-proof {
-        position: relative;
-        width: 100%;
-        margin-bottom: 14px;
-        transform: none;
+        position: absolute;
+        left: 4px;
+        top: -20px;
+        bottom: auto;
+        width: 140px;
+        margin-bottom: 0;
+        transform: rotate(-5deg);
       }
 #bbtk-page .value-medallion {
         right: 4px;
@@ -1180,7 +1197,7 @@ html { scroll-behavior: smooth; }
 #bbtk-page .pain-card { padding: 24px; }
 #bbtk-page .pain-card:nth-child(2) { margin-left: 0; }
 #bbtk-page .step-card.center { margin-top: 0; transform: none; }
-#bbtk-page .feature-card, #bbtk-page .feature-card.feature-xl, #bbtk-page .feature-card.feature-wide, #bbtk-page .feature-card:nth-child(5), #bbtk-page .feature-card:nth-child(7) { grid-column: span 1; display: block; }
+#bbtk-page .feature-card, #bbtk-page .feature-card.feature-xl, #bbtk-page .feature-card.feature-wide, #bbtk-page .feature-card:nth-child(5), #bbtk-page .feature-card:nth-child(7), #bbtk-page .resource-card.feature-resource-large { grid-column: span 1; display: block; }
 #bbtk-page .feature-card.feature-xl .big-icon { margin-bottom: 18px; }
 #bbtk-page .guarantee .big-icon { width: 110px; height: 110px; border-radius: 32px; }
 #bbtk-page .sticky-offer h2 {
@@ -1237,6 +1254,7 @@ html { scroll-behavior: smooth; }
   #bbtk-page .hero-inner { align-items: start; }
   #bbtk-page .hero { padding-top: clamp(48px, 5vw, 72px); }
   #bbtk-page .product-stage { align-self: start; transform: translateY(0); }
+  #bbtk-page .product-stage { align-items: start; }
   /* ---- Mobile fix: re-assert single-column hero at/below 1120px. ----
      Kimi's 2-col rule + the hero tweaks above are unconditional and were
      overriding the page's built-in mobile collapse, crushing the text column. ---- */
@@ -1246,6 +1264,65 @@ html { scroll-behavior: smooth; }
   /* ---- Mobile hero: shrink headline so long words fit narrow phones (prevents horizontal overflow) ---- */
   @media (max-width: 600px) {
     #bbtk-page .hero h1 { font-size: clamp(34px, 9vw, 52px); }
+  }
+  /* ---- Responsive hero artwork and badges ---- */
+  #bbtk-page .product-stage {
+    min-height: auto;
+  }
+  #bbtk-page .floating-proof {
+    left: -12px;
+    top: -20px;
+    width: min(184px, 30vw);
+  }
+  #bbtk-page .value-medallion {
+    right: -4px;
+    bottom: -94px;
+    width: min(144px, 23vw);
+    padding: 0;
+  }
+  @media (max-width: 1120px) {
+    #bbtk-page .product-stage {
+      padding-bottom: 58px;
+    }
+    #bbtk-page .floating-proof {
+      left: 0;
+      top: -18px;
+      width: min(184px, 34vw);
+    }
+    #bbtk-page .value-medallion {
+      right: 2px;
+      bottom: -34px;
+      width: min(144px, 27vw);
+    }
+  }
+  @media (max-width: 780px) {
+    #bbtk-page .floating-proof {
+      left: 4px;
+      top: -14px;
+      width: min(112px, 32vw);
+    }
+    #bbtk-page .value-medallion {
+      right: 4px;
+      bottom: -24px;
+      width: min(128px, 34vw);
+      padding: 0;
+    }
+
+    /* GHL9: Enlarge only the Resource Hub artwork on phones.
+       The source image contains generous white space, so a small scale-up
+       makes the toolkit easier to see without affecting the other cards. */
+    #bbtk-page .resource-card.feature-resource-large > .resource-card-image {
+      width: calc(100% + 24px);
+      min-height: 280px;
+      margin-inline: -12px;
+    }
+    #bbtk-page .resource-card.feature-resource-large > .resource-card-image img {
+      width: 100%;
+      height: 280px;
+      max-width: none;
+      transform: scale(1.22);
+      transform-origin: center;
+    }
   }
   #bbtk-page .brand-logo { height: 64px; width: auto; display: block; }
 </style>
@@ -1275,11 +1352,11 @@ html { scroll-behavior: smooth; }
           </div>
         </div>
         <div class="product-stage" aria-label="Behavior and Burnout Toolkit product bundle">
-          <div class="floating-proof"><img src="assets/images/lifetime-access-updates.png" alt="Lifetime access and updates badge" /></div>
+          <div class="floating-proof"><img src="https://assets.cdn.filesafe.space/4OxRQgEeGmwrdzGvzcGu/media/6aa36441b5c228431bdf44d6.png" alt="Lifetime access and updates badge" /></div>
           <div class="product-frame">
-            <img src="assets/images/hero-image.jpg" alt="Behavior and Burnout Toolkit resources displayed across printable and digital formats" style="display:block;width:100%;height:auto;object-fit:contain;" />
+            <img src="https://assets.cdn.filesafe.space/4OxRQgEeGmwrdzGvzcGu/media/6aa3643db5c228431bdf445b.jpg" alt="Behavior and Burnout Toolkit resources displayed across printable and digital formats" style="display:block;width:100%;height:auto;object-fit:contain;" />
           </div>
-          <div class="value-medallion"><img src="assets/images/complete-badge.png" alt="Complete support system badge" /></div>
+          <div class="value-medallion"><img src="https://assets.cdn.filesafe.space/4OxRQgEeGmwrdzGvzcGu/media/6aa8e91e9f8b31b6ab1a5d51.png" alt="Complete support system badge" /></div>
         </div>
       </div>
     </section>
@@ -1411,7 +1488,7 @@ html { scroll-behavior: smooth; }
           <a class="cta" style="width:100%; margin-top:28px;" href="https://getbehaviorkit.com/checkout" data-ghl-cta="primary">Get The Full Toolkit</a>
         </aside>
                         <div class="feature-grid">
-          <div class="feature-card resource-card feature-resource-large"><div class="resource-card-header"><span class="resource-card-icon"><span class="mi" aria-hidden="true">inventory_2</span></span><div class="resource-card-title">Behavior &amp; Burnout Resource Hub</div></div></div>
+          <div class="feature-card resource-card feature-resource-large"><div class="resource-card-header"><span class="resource-card-icon"><span class="mi" aria-hidden="true">inventory_2</span></span><div class="resource-card-title">Behavior &amp; Burnout Resource Hub</div></div><div class="resource-card-image"><img src="assets/images/hub.jpg" alt="Behavior &amp; Burnout Resource Hub" loading="lazy" /></div></div>
           <div class="feature-card resource-card"><div class="resource-card-header"><span class="resource-card-icon"><span class="mi" aria-hidden="true">account_tree</span></span><div class="resource-card-title">Behavior Breakdown System</div></div><div class="resource-card-image"><img src="assets/images/behavior-breakdown-2.jpg" alt="Behavior Breakdown System" loading="lazy" /></div></div>
           <div class="feature-card resource-card"><div class="resource-card-header"><span class="resource-card-icon"><span class="mi" aria-hidden="true">grid_view</span></span><div class="resource-card-title">Four Behavior Buckets Framework</div></div><div class="resource-card-image"><img src="assets/images/four-buckets.jpg" alt="Four Behavior Buckets Framework" loading="lazy" /></div></div>
           <div class="feature-card resource-card"><div class="resource-card-header"><span class="resource-card-icon"><span class="mi" aria-hidden="true">photo_library</span></span><div class="resource-card-title">Behavior Snapshot Library</div></div><div class="resource-card-image"><img src="assets/images/snapshot-2.jpg" alt="Behavior Snapshot Library" loading="lazy" /></div></div>
@@ -1550,5 +1627,3 @@ html { scroll-behavior: smooth; }
       }
     })();
   </script>
-
-
